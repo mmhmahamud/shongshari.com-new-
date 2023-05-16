@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import { DynamicSingleServiceContainer } from "../../components/pages/DynamicProfilePage/DynamicSingleServiceContainer/DynamicSingleServiceContainer";
 import { FilterResults } from "../../components/pages/FindPartner/FilterResults/FilterResults";
 import { FindAPartnerSuggested } from "../../components/pages/FindPartner/FindAPartnerSuggested";
@@ -18,14 +19,21 @@ import EditPhysicalInfo from "../../components/SingleProfilesUser/profileSection
 import EditProfesionalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditProfesionalInfo";
 import EditSiblingsInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditSiblingsInfo";
 import ProfileDetails from "../../components/SingleProfilesUser/profileSection/ProfileDetails";
-import { SingleProfiles } from "../../components/SingleProfilesUser/SingleProfiles";
 import { Container } from "../../Wrapper/Stepper/Container";
+import { BrandLoader } from "../../components/shared/Cards/Loader/BrandLoader/BrandLoader";
+const SingleProfiles = React.lazy(() =>
+  import("../../components/SingleProfilesUser/SingleProfiles")
+);
 
 const matrimonyPrivateRoutes = [
   {
     id: 1,
     path: "/userprofile",
-    element: <SingleProfiles />,
+    element: (
+      <Suspense fallback={<BrandLoader />}>
+        <SingleProfiles />
+      </Suspense>
+    ),
     nestedRoutes: [
       {
         id: 1,

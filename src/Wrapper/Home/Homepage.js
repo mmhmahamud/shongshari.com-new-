@@ -14,7 +14,8 @@ import Footer from "../../components/shared/Footer/Footer";
 import TopProfile from "../../components/pages/TopProfile/TopProfile";
 import { BrandLoader } from "../../components/shared/Cards/Loader/BrandLoader/BrandLoader";
 import isLoggedIn from "../../Helper/hooks/checkLoggerPersestency/isLoggedIn";
-import { MobileHome } from "./mobileversion/MobileHome";
+// import MobileHome from "./mobileversion/MobileHome";
+const MobileHome = lazy(() => import("./mobileversion/MobileHome"));
 const NavBar = lazy(() => import("../../components/pages/Shared/NavBar"));
 const Banner = React.lazy(() =>
   import("../../components/pages/Home/Banner/Banner")
@@ -26,8 +27,8 @@ const Homepage = () => {
 
   return (
     <div className="font-george overflow-x-hidden">
-      <div className="hidden md:hidden lg:block">
-        <Suspense fallback={<BrandLoader />}>
+      <Suspense fallback={<BrandLoader />}>
+        <div className="hidden md:hidden lg:block">
           <NavBar></NavBar>
           <Banner></Banner>
           <LatestRegisteredMember />
@@ -40,11 +41,11 @@ const Homepage = () => {
           <FindSoleMate />
           {!logged && <Anexecutive />}
           <Footer />
-        </Suspense>
-      </div>
-      <div className="block lg:hidden">
-        <MobileHome></MobileHome>
-      </div>
+        </div>
+        <div className="block lg:hidden">
+          <MobileHome></MobileHome>
+        </div>
+      </Suspense>
     </div>
   );
 };

@@ -1,14 +1,14 @@
 // configuration
 import React from "react";
-import { BottomNav } from "./BottomNav";
 
 // components
+import { BottomNav } from "./BottomNav";
 import { MobileBanner } from "./MobileBanner";
 import { Services } from "./Services";
 import { TopMenu } from "./TopMenu";
 import TopProfileMov from "./topprofilemov/TopProfileMov";
 
-export const MobileHome = () => {
+const MobileHome = () => {
   return (
     <div className="mov-res">
       <TopMenu></TopMenu>
@@ -20,3 +20,5 @@ export const MobileHome = () => {
     </div>
   );
 };
+
+export default MobileHome;

@@ -13,7 +13,7 @@ import matrimonyMobilePublicRouteRenderer from "./Matrimony/MobileMatrimony/matr
 import matrimonyMobileRouteRenderer from "./Matrimony/MobileMatrimony/matrimonyMobileRouteRenderer";
 import matrimonyPublicRouteRenderer from "./Matrimony/matrimonyPublicRouteRenderer";
 import matrimonyRouteRenderer from "./Matrimony/matrimonyRouteRenderer";
-// import packageRouteRendered from "./Package/packageRouteRendered";
+import packageRouteRendered from "./Package/packageRouteRendered";
 import lawyerRouteRenderer from "./lawyer/lawyerRouteRenderer";
 import myAccountRouteRenderer from "./myAcount/myAccountRouteRenderer";
 // import shopRouteRenderer from "./shop/shopRouteRenderer";
@@ -48,7 +48,7 @@ const MasterRoute = () => {
         {/* Course Public routes */}
         {/* {coursePublicRouteRenderer()} */}
         {/* Package routes */}
-        {/* {packageRouteRendered()} */}
+        {packageRouteRendered()}
         {/* Video call routes */}
         {renderVideoCall()}
         <Route path="*" element={<NotFoundPage />} />

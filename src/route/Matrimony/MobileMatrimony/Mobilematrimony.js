@@ -47,7 +47,7 @@ import { ShongShariStory } from "../../../Wrapper/Home/mobileversion/history/Sho
 import { Like } from "../../../Wrapper/Home/mobileversion/Like";
 import { MatchesMov } from "../../../Wrapper/Home/mobileversion/MatchesMov";
 import { MeetMov } from "../../../Wrapper/Home/mobileversion/meet/MeetMov";
-import { MobileHome } from "../../../Wrapper/Home/mobileversion/MobileHome";
+import MobileHome from "../../../Wrapper/Home/mobileversion/MobileHome";
 
 // routes
 const MobileMatrimony = [

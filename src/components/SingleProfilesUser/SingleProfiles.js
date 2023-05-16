@@ -22,7 +22,7 @@ import UtilitisCard from "./UtilitisCard";
 import { VerificationCard } from "./VerificationCard";
 import ChartBoard from "./chatboard/ChartBoard";
 
-export const SingleProfiles = () => {
+const SingleProfiles = () => {
   // hook variable declaration
   const [SocialBoxOpen, setSocialBoxOpen] = useState(false);
   const { data, isLoading, error } = useGetProfileDetailsWIthAuthQuery();
@@ -113,3 +113,5 @@ export const SingleProfiles = () => {
     </div>
   );
 };
+
+export default SingleProfiles;

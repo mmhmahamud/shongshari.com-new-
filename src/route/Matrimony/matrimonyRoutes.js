@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import { Inbox } from "../../components/Features/Messege/Inbox/Inbox";
 import { MessegeBox } from "../../components/Features/Messege/Messeges/MessegeBox";
 import { GoogleSignUpInfo } from "../../components/pages/Authentications/GoogleLogin/GoogleSignUpInfo";
@@ -7,7 +8,6 @@ import { OTP } from "../../components/pages/Authentications/OTP/OTP";
 import RegAsProfessional from "../../components/pages/Authentications/RegAsProfessional";
 import Signup from "../../components/pages/Authentications/SignUp";
 import Contact from "../../components/pages/Contact/Contact";
-import { DynamicProfilePage } from "../../components/pages/DynamicProfilePage/DynamicProfilePage";
 import { OurTeams } from "../../components/pages/OurTeams/OurTeams";
 import Packages from "../../components/pages/packages/Packages";
 import { Privacy } from "../../components/pages/Privacy/Privacy";
@@ -31,6 +31,10 @@ import About from "../../Wrapper/About/About";
 import Homepage from "../../Wrapper/Home/Homepage";
 import HomePageExtra from "../../Wrapper/HomePageExtra/HomePageExtra";
 import MemberShip from "../../Wrapper/Membership/MemberShip";
+import { BrandLoader } from "../../components/shared/Cards/Loader/BrandLoader/BrandLoader";
+const DynamicProfilePage = React.lazy(() =>
+  import("../../components/pages/DynamicProfilePage/DynamicProfilePage")
+);
 
 const matrimonyRoutes = [
   {
@@ -93,7 +97,11 @@ const matrimonyRoutes = [
   {
     id: 9,
     path: "/profile/:id",
-    element: <DynamicProfilePage />,
+    element: (
+      <Suspense fallback={<BrandLoader />}>
+        <DynamicProfilePage />
+      </Suspense>
+    ),
   },
   {
     id: 10,
