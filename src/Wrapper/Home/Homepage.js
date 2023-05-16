@@ -13,7 +13,7 @@ import MeetNewPeople from "../../components/pages/MeetNewPeople/MeetNewPeople";
 import PeopleJoinedAlready from "../../components/pages/PeopleJoinedAlready/PeopleJoinedAlready";
 import Footer from "../../components/shared/Footer/Footer";
 import TopProfile from "../../components/pages/TopProfile/TopProfile";
-import { BrandLoader } from "../../components/shared/loader/BrandLoader/BrandLoader";
+import { BrandLoader } from "../../components/shared/Cards/Loader/BrandLoader/BrandLoader";
 const NavBar = lazy(() => import("../../components/pages/Shared/NavBar"));
 const Banner = React.lazy(() =>
   import("../../components/pages/Home/Banner/Banner")
