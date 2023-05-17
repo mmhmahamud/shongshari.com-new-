@@ -6,26 +6,29 @@ import useDocumentTitle from "../../assets/utilities/useDocumentTitle";
 import Anexecutive from "../../components/CardComopents/Anexecutive";
 import BeginFamilyJourney from "../../components/pages/Home/BeginFamilyJourney/BeginFamilyJourney";
 import FindSoleMate from "../../components/pages/Home/FindSoleMate/FindSoleMate";
-import PackagePromo from "../../components/pages/Home/PackagePromo/PackagePromo";
 import SecureVerified from "../../components/pages/Home/SecureVerified/SecureVerified";
 import LatestRegisteredMember from "../../components/pages/LatestRegisteredMember/LatestRegisteredMember";
 import MeetNewPeople from "../../components/pages/MeetNewPeople/MeetNewPeople";
 import PeopleJoinedAlready from "../../components/pages/PeopleJoinedAlready/PeopleJoinedAlready";
 import Footer from "../../components/shared/Footer/Footer";
 import TopProfile from "../../components/pages/TopProfile/TopProfile";
-import { BrandLoader } from "../../components/shared/loader/BrandLoader/BrandLoader";
+import { BrandLoader } from "../../components/shared/Cards/Loader/BrandLoader/BrandLoader";
+import isLoggedIn from "../../Helper/hooks/checkLoggerPersestency/isLoggedIn";
+// import MobileHome from "./mobileversion/MobileHome";
+const MobileHome = lazy(() => import("./mobileversion/MobileHome"));
 const NavBar = lazy(() => import("../../components/pages/Shared/NavBar"));
 const Banner = React.lazy(() =>
   import("../../components/pages/Home/Banner/Banner")
 );
 
 const Homepage = () => {
+  const logged = isLoggedIn();
   useDocumentTitle("Shongshari | Home");
 
   return (
     <div className="font-george overflow-x-hidden">
-      <div className="hidden md:hidden lg:block">
-        <Suspense fallback={<BrandLoader />}>
+      <Suspense fallback={<BrandLoader />}>
+        <div className="hidden md:hidden lg:block">
           <NavBar></NavBar>
           <Banner></Banner>
           <LatestRegisteredMember />
@@ -33,14 +36,16 @@ const Homepage = () => {
           <BeginFamilyJourney></BeginFamilyJourney>
           <TopProfile />
           <PeopleJoinedAlready />
-          <PackagePromo />
-
+          {/* <PackagePromo /> */}
           <MeetNewPeople />
           <FindSoleMate />
-          <Anexecutive />
+          {!logged && <Anexecutive />}
           <Footer />
-        </Suspense>
-      </div>
+        </div>
+        <div className="block lg:hidden">
+          <MobileHome></MobileHome>
+        </div>
+      </Suspense>
     </div>
   );
 };
