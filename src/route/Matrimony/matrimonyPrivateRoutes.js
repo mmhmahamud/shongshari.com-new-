@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import { DynamicSingleServiceContainer } from "../../components/pages/DynamicProfilePage/DynamicSingleServiceContainer/DynamicSingleServiceContainer";
 import { FilterResults } from "../../components/pages/FindPartner/FilterResults/FilterResults";
 import { FindAPartnerSuggested } from "../../components/pages/FindPartner/FindAPartnerSuggested";
@@ -11,17 +11,46 @@ import { DesktopNotification } from "../../components/shared/Notification/Deskto
 import EducationalCertificateWeb from "../../components/SingleProfilesUser/CertificateSection/EducationalCertificateWeb";
 import PersonalCertificateWeb from "../../components/SingleProfilesUser/CertificateSection/PersonalCertificateWeb";
 // import ProfessionalCertificateWeb from "../../components/SingleProfilesUser/CertificateSection/ProfessionalCertificateWeb";
-import EditEducationalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditEducationalInfo";
-import EditFamilyInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditFamilyInfo";
-import EditOthersInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditOthersInfo";
-import EditPersonalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPersonalInfo";
-import EditPhysicalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPhysicalInfo";
-import EditProfesionalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditProfesionalInfo";
-import EditSiblingsInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditSiblingsInfo";
-import ProfileDetails from "../../components/SingleProfilesUser/profileSection/ProfileDetails";
 import { Container } from "../../Wrapper/Stepper/Container";
+import { OvalLoader } from "../../components/shared/Cards/Loader/OvalLoader/OvalLoader";
 import { BrandLoader } from "../../components/shared/Cards/Loader/BrandLoader/BrandLoader";
-const SingleProfiles = React.lazy(() =>
+import ProfileDetails from "../../components/SingleProfilesUser/profileSection/ProfileDetails";
+const EditOthersInfo = lazy(() =>
+  import(
+    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditOthersInfo"
+  )
+);
+const EditPersonalInfo = lazy(() =>
+  import(
+    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPersonalInfo"
+  )
+);
+const EditPhysicalInfo = lazy(() =>
+  import(
+    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPhysicalInfo"
+  )
+);
+const EditProfesionalInfo = lazy(() =>
+  import(
+    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditProfesionalInfo"
+  )
+);
+const EditEducationalInfo = lazy(() =>
+  import(
+    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditEducationalInfo"
+  )
+);
+const EditFamilyInfo = lazy(() =>
+  import(
+    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditFamilyInfo"
+  )
+);
+const EditSiblingsInfo = lazy(() =>
+  import(
+    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditSiblingsInfo"
+  )
+);
+const SingleProfiles = lazy(() =>
   import("../../components/SingleProfilesUser/SingleProfiles")
 );
 
@@ -47,37 +76,65 @@ const matrimonyPrivateRoutes = [
           {
             id: 1,
             path: "personalinfo/:id",
-            element: <EditPersonalInfo />,
+            element: (
+              <Suspense fallback={<OvalLoader />}>
+                <EditPersonalInfo />
+              </Suspense>
+            ),
           },
           {
             id: 2,
             path: "profesionalinfo/:id",
-            element: <EditProfesionalInfo />,
+            element: (
+              <Suspense fallback={<OvalLoader />}>
+                <EditProfesionalInfo />
+              </Suspense>
+            ),
           },
           {
             id: 3,
             path: "educationalinfo/:id",
-            element: <EditEducationalInfo />,
+            element: (
+              <Suspense fallback={<OvalLoader />}>
+                <EditEducationalInfo />
+              </Suspense>
+            ),
           },
           {
             id: 4,
             path: "physicalinfo/:id",
-            element: <EditPhysicalInfo />,
+            element: (
+              <Suspense fallback={<OvalLoader />}>
+                <EditPhysicalInfo />
+              </Suspense>
+            ),
           },
           {
             id: 5,
             path: "othersinfo/:id",
-            element: <EditOthersInfo />,
+            element: (
+              <Suspense fallback={<OvalLoader />}>
+                <EditOthersInfo />
+              </Suspense>
+            ),
           },
           {
             id: 6,
             path: "familyInfo/:id",
-            element: <EditFamilyInfo />,
+            element: (
+              <Suspense fallback={<OvalLoader />}>
+                <EditFamilyInfo />
+              </Suspense>
+            ),
           },
           {
             id: 7,
             path: "siblingsInfo/:id",
-            element: <EditSiblingsInfo />,
+            element: (
+              <Suspense fallback={<OvalLoader />}>
+                <EditSiblingsInfo />
+              </Suspense>
+            ),
           },
         ],
       },

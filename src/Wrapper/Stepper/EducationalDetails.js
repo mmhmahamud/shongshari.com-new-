@@ -12,7 +12,7 @@ import { AiOutlineCloudUpload } from "react-icons/ai";
 import { useSetEducationalDetailsMutation } from "../../Redux/features/userInfo/userApi";
 import { usePhotosUploadOnServerMutation } from "../../Redux/features/fileUpload/fileUploadApi";
 
-export const EducationalDetails = ({ setPage }) => {
+const EducationalDetails = ({ setPage }) => {
   const [setEducationalDetails, { data: response, isLoading }] =
     useSetEducationalDetailsMutation();
   const [uploadCertificate, { data: uploadedCertificate }] =
@@ -110,7 +110,7 @@ export const EducationalDetails = ({ setPage }) => {
       const formData = new FormData();
       formData.append("image", e.target.files[0]);
       uploadCertificate(formData);
-    } 
+    }
   };
 
   const moreEduAddedAchievementMomentHandler = async (e) => {
@@ -118,8 +118,7 @@ export const EducationalDetails = ({ setPage }) => {
       const formData = new FormData();
       formData.append("image", e.target.files[0]);
       uploadMoreCertificate(formData);
-     }
-    
+    }
   };
 
   useEffect(() => {
@@ -538,3 +537,5 @@ export const EducationalDetails = ({ setPage }) => {
     </div>
   );
 };
+
+export default EducationalDetails;
