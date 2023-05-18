@@ -11,7 +11,7 @@ import { AiOutlineCloudUpload } from "react-icons/ai";
 import { useSetProfessionalDetailsMutation } from "../../Redux/features/userInfo/userApi";
 import { usePhotosUploadOnServerMutation } from "../../Redux/features/fileUpload/fileUploadApi";
 
-const ProfessionalDetails = ({ setPage }) => {
+export const ProfessionalDetails = ({ setPage }) => {
   const [workPeriod, setWorkPeriod] = useState();
   const [addedWorkPeriod, setAddedWorkPeriod] = useState([]);
   const [professionalAchievementMoment, setProfessionalAchievementMoment] =
@@ -356,5 +356,3 @@ const ProfessionalDetails = ({ setPage }) => {
     </div>
   );
 };
-
-export default ProfessionalDetails;

@@ -1,4 +1,3 @@
-import React, { lazy, Suspense } from "react";
 import FindKaziPage from "../../components/pages/Kazi/FindKazi/FindKaziPage";
 import { FindRecentKazi } from "../../components/pages/Kazi/FindKazi/FindRecentKazi";
 import KaziActivity from "../../components/pages/Kazi/KaziActivity/KaziActivity";
@@ -9,33 +8,12 @@ import { KaziProfile } from "../../components/pages/Kazi/Profile/KaziProfile";
 import { KaziProfileContainer } from "../../components/pages/Kazi/Profile/profileContainer/KaziProfileContainer";
 import { ServiceEdit } from "../../components/shared/Components/LawyerAgentKaziService/ServiceEdit/ServiceEdit";
 import SingleServicesContainer from "../../components/shared/Components/LawyerAgentKaziService/SingleServices/SingleServicesContainer";
+import EditEducationalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditEducationalInfo";
+import EditOthersInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditOthersInfo";
+import EditPersonalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPersonalInfo";
+import EditPhysicalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPhysicalInfo";
+import EditProfesionalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditProfesionalInfo";
 import ProfileDetails from "../../components/SingleProfilesUser/profileSection/ProfileDetails";
-import { OvalLoader } from "../../components/shared/Cards/Loader/OvalLoader/OvalLoader";
-const EditOthersInfo = lazy(() =>
-  import(
-    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditOthersInfo"
-  )
-);
-const EditPersonalInfo = lazy(() =>
-  import(
-    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPersonalInfo"
-  )
-);
-const EditPhysicalInfo = lazy(() =>
-  import(
-    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPhysicalInfo"
-  )
-);
-const EditProfesionalInfo = lazy(() =>
-  import(
-    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditProfesionalInfo"
-  )
-);
-const EditEducationalInfo = lazy(() =>
-  import(
-    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditEducationalInfo"
-  )
-);
 
 const kaziPrivateRoutes = [
   {
@@ -85,47 +63,27 @@ const kaziPrivateRoutes = [
               {
                 id: 1,
                 path: "personalinfo/:id",
-                element: (
-                  <Suspense fallback={<OvalLoader />}>
-                    <EditPersonalInfo />
-                  </Suspense>
-                ),
+                element: <EditPersonalInfo />,
               },
               {
                 id: 2,
                 path: "profesionalinfo/:id",
-                element: (
-                  <Suspense fallback={<OvalLoader />}>
-                    <EditProfesionalInfo />
-                  </Suspense>
-                ),
+                element: <EditProfesionalInfo />,
               },
               {
                 id: 3,
                 path: "educationalinfo/:id",
-                element: (
-                  <Suspense fallback={<OvalLoader />}>
-                    <EditEducationalInfo />
-                  </Suspense>
-                ),
+                element: <EditEducationalInfo />,
               },
               {
                 id: 4,
                 path: "physicalinfo/:id",
-                element: (
-                  <Suspense fallback={<OvalLoader />}>
-                    <EditPhysicalInfo />
-                  </Suspense>
-                ),
+                element: <EditPhysicalInfo />,
               },
               {
                 id: 5,
                 path: "othersinfo/:id",
-                element: (
-                  <Suspense fallback={<OvalLoader />}>
-                    <EditOthersInfo />
-                  </Suspense>
-                ),
+                element: <EditOthersInfo />,
               },
             ],
           },

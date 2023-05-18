@@ -12,7 +12,7 @@ import DynamicProfileCard from "./DynamicProfileCard";
 import { DynamicSocialBox } from "./DynamicSocialBox";
 import DynamicTable from "./DynamicTable";
 
-const DynamicProfilePage = () => {
+export const DynamicProfilePage = () => {
   // hook variable declaration
   const { id } = useParams();
   const [SocialBoxOpen, setSocialBoxOpen] = useState(false);
@@ -77,5 +77,3 @@ const DynamicProfilePage = () => {
     </div>
   );
 };
-
-export default DynamicProfilePage;

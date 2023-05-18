@@ -9,7 +9,7 @@ import { useNavigate } from "react-router";
 // components
 import { useSetOthersDetailsMutation } from "../../Redux/features/userInfo/userApi";
 
-const OtherDetails = ({ setPage }) => {
+export const OtherDetails = ({ setPage }) => {
   const [setOthersDetails, { data: response, isLoading }] =
     useSetOthersDetailsMutation();
   const navigate = useNavigate();
@@ -329,5 +329,3 @@ const OtherDetails = ({ setPage }) => {
     </div>
   );
 };
-
-export default OtherDetails;

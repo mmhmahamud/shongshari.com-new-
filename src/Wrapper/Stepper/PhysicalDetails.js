@@ -10,7 +10,7 @@ import CreatableSelect from "react-select/creatable";
 import getCookie from "../../Helper/cookies/getCookie";
 import { useSetPhysicalDetailsMutation } from "../../Redux/features/userInfo/userApi";
 
-const PhysicalDetails = ({ setPage }) => {
+export const PhysicalDetails = ({ setPage }) => {
   const [ancestry, setAncestry] = useState("");
   const [skinTone, setSkinTone] = useState("");
   const [eyeColor, setEyeColor] = useState("");
@@ -304,5 +304,3 @@ const PhysicalDetails = ({ setPage }) => {
     </div>
   );
 };
-
-export default PhysicalDetails;

@@ -1,4 +1,3 @@
-import React, { lazy, Suspense } from "react";
 import AgentActivity from "../../components/pages/Agent/AgentActivity/AgentActivity";
 import AgentProfileContainer from "../../components/pages/Agent/AgentProfile/AgentProfileContainer/AgentProfileContainer";
 import AgentReviewsContainer from "../../components/pages/Agent/AgentReview/AgentReviewsContainer";
@@ -8,34 +7,13 @@ import FindAgentPage from "../../components/pages/Agent/FindAgent/FindAgentPage"
 import { FindRecentAgent } from "../../components/pages/Agent/FindAgent/FindRecentAgent";
 import { ServiceEdit } from "../../components/shared/Components/LawyerAgentKaziService/ServiceEdit/ServiceEdit";
 import SingleServicesContainer from "../../components/shared/Components/LawyerAgentKaziService/SingleServices/SingleServicesContainer";
+import EditEducationalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditEducationalInfo";
+import EditOthersInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditOthersInfo";
+import EditPersonalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPersonalInfo";
+import EditPhysicalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPhysicalInfo";
+import EditProfesionalInfo from "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditProfesionalInfo";
 import ProfileDetails from "../../components/SingleProfilesUser/profileSection/ProfileDetails";
 import Agent from "../../Wrapper/Agent/Agent";
-import { OvalLoader } from "../../components/shared/Cards/Loader/OvalLoader/OvalLoader";
-const EditOthersInfo = lazy(() =>
-  import(
-    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditOthersInfo"
-  )
-);
-const EditPersonalInfo = lazy(() =>
-  import(
-    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPersonalInfo"
-  )
-);
-const EditPhysicalInfo = lazy(() =>
-  import(
-    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditPhysicalInfo"
-  )
-);
-const EditProfesionalInfo = lazy(() =>
-  import(
-    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditProfesionalInfo"
-  )
-);
-const EditEducationalInfo = lazy(() =>
-  import(
-    "../../components/SingleProfilesUser/profileSection/EditprofileSection/EditEducationalInfo"
-  )
-);
 
 const AgentPrivateRoutes = [
   {
@@ -73,47 +51,27 @@ const AgentPrivateRoutes = [
           {
             id: 2,
             path: "edit/personalinfo/:id",
-            element: (
-              <Suspense fallback={<OvalLoader />}>
-                <EditPersonalInfo />
-              </Suspense>
-            ),
+            element: <EditPersonalInfo />,
           },
           {
             id: 3,
             path: "edit/profesionalinfo/:id",
-            element: (
-              <Suspense fallback={<OvalLoader />}>
-                <EditProfesionalInfo />
-              </Suspense>
-            ),
+            element: <EditProfesionalInfo />,
           },
           {
             id: 4,
             path: "edit/educationalinfo/:id",
-            element: (
-              <Suspense fallback={<OvalLoader />}>
-                <EditEducationalInfo />
-              </Suspense>
-            ),
+            element: <EditEducationalInfo />,
           },
           {
             id: 5,
             path: "edit/physicalinfo/:id",
-            element: (
-              <Suspense fallback={<OvalLoader />}>
-                <EditPhysicalInfo />
-              </Suspense>
-            ),
+            element: <EditPhysicalInfo />,
           },
           {
             id: 6,
             path: "edit/othersinfo/:id",
-            element: (
-              <Suspense fallback={<OvalLoader />}>
-                <EditOthersInfo />
-              </Suspense>
-            ),
+            element: <EditOthersInfo />,
           },
         ],
       },

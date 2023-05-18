@@ -43,7 +43,7 @@ const ReportForm = () => {
       }
 
       // api call
-      //   createTicket(formData);
+      createTicket(formData);
     }
   };
 

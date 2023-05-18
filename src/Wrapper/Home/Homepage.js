@@ -14,8 +14,7 @@ import Footer from "../../components/shared/Footer/Footer";
 import TopProfile from "../../components/pages/TopProfile/TopProfile";
 import { BrandLoader } from "../../components/shared/Cards/Loader/BrandLoader/BrandLoader";
 import isLoggedIn from "../../Helper/hooks/checkLoggerPersestency/isLoggedIn";
-// import MobileHome from "./mobileversion/MobileHome";
-const MobileHome = lazy(() => import("./mobileversion/MobileHome"));
+import { MobileHome } from "./mobileversion/MobileHome";
 const NavBar = lazy(() => import("../../components/pages/Shared/NavBar"));
 const Banner = React.lazy(() =>
   import("../../components/pages/Home/Banner/Banner")

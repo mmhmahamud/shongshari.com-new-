@@ -48,7 +48,7 @@ export const MobilePartnerCard = ({ user, role }) => {
     }
     await likeSingleProfile(user?._id);
   };
-  console.log(freeKaziContact, role);
+
   const goToProfile = () => {
     if (role === "kazi" && !freeKaziContact) {
       return setShowPopup(true);
